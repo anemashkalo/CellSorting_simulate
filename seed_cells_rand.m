@@ -1,12 +1,17 @@
-function [cells1,cells2]=seed_cells_rand(rc,n,cellsz_pxl)
+function [cells1,cells2]=seed_cells_rand(rc,n,cellsz_pxl,celltyperatio_equal)
 
 close all;axis equal;hold on
 clear tmp1; clear tmp2;clear cells1, clear cells2
 [x,y,~] = cylinder(rc);plot(x(1,:),y(1,:),'--m');
 % get the total number of randomly generated points
+if celltyperatio_equal ==1
+    nn = 2;
+else
+    nn= 3;
+end
 for i=1:n %n points inside the circle
 [x, y]=rand_coord_circle(rc);%
-if mod(i,2)==0 % even
+if mod(i,nn)==0 % even   % 3
 tmp1(i,1:2) = [x y];
 else           % uneven
 tmp2(i,1:2) = [x y];

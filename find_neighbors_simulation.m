@@ -16,7 +16,7 @@ local_neighbors = ipdm(next_iter_cells1(synthetic_trackID,1:2),allcells(:,1:2),'
         % now find which of these neighbors are cfp and wich are pluri
         totest1 = allcells(local_neighbors.columnindex',:);
         if isempty(totest1)
-            disp('no local neighbors found; increase local neighborhood R')
+           % disp('no local neighbors found; increase local neighborhood R')
             like_cells=[];
             unlike_cells=[];
             no_neighbors = 1;
@@ -43,7 +43,7 @@ local_neighbors = ipdm(next_iter_cells1(synthetic_trackID,1:2),allcells(:,1:2),'
         end
         
         if isempty(coordinate_same) && isempty(coordinate_other)
-            disp('no local neighbors found; increase local neighborhood R')
+           % disp('no local neighbors found; increase local neighborhood R')
             like_cells=[];
             unlike_cells=[];
             no_neighbors = 1;
